@@ -1,13 +1,17 @@
 
 public class Main {
+    static int[] data = {1, 3, 5, 7, 9};
     public static void main(String[] args) {
-        Driver Di = new Driver("고예성",1000);//객체생성,생성자 호출과 초기화
-        Rookie rk = new Rookie("루키",100,3);
-        Di.riding();
-        Di.Watching();
-        rk.lose();
+        Calculater ca = new Calculater();
 
+        System.out.println(ca.sum(1,2));
 
+        System.out.println(ca.minus(1,2));
 
+        System.out.println(ca.isOdd(2));
+        System.out.println(ca.isOdd(1));
+
+        int result = ca.avg(data);
+        System.out.println(result);
     }
 }
