@@ -38,15 +38,23 @@ public class Arrays {
 
     }
 
-    public  int outIndex(int[] arr,int targetIndex){
-
-        for(int i = targetIndex;i < arr.length - targetIndex + 1;i++){
-            arr[i] = arr[i + 1];
-            System.out.printf(String.format("[%d]",arr[i]));
+    public int outIndex(int[] arr,int targetIndex){
+        System.out.printf(String.format("[INDEX:%d]out:%d",targetIndex,arr[targetIndex]));
+        if (targetIndex == 0){
+            for(int i = targetIndex;i < arr.length - targetIndex - 1;i++) {
+                arr[i] = arr[i + 1];
+            }
         }
+        else if (targetIndex >= arr.length) {
+            System.out.println("out of range");
 
-        int result_index = arr.length -1;
-        arr[result_index] = 0;
+        }
+        else {
+            for (int i = targetIndex; i <= arr.length - 2; i++) {
+                arr[i] = arr[i + 1];
+            }
+        }
+        arr[arr.length -1] = 0;
         return arr[targetIndex];
     }
 
