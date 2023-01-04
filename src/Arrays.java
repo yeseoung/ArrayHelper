@@ -37,4 +37,16 @@ public class Arrays {
         return arr;
 
     }
+
+    public  int outIndex(int[] arr,int targetIndex){
+
+        for(int i = targetIndex;i < arr.length - targetIndex + 1;i++){
+            arr[i] = arr[i + 1];
+            System.out.printf(String.format("[%d]",arr[i]));
+        }
+
+        int result_index = arr.length -1;
+        arr[result_index] = 0;
+        return arr[targetIndex];
+    }
 }
