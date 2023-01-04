@@ -49,4 +49,8 @@ public class Arrays {
         arr[result_index] = 0;
         return arr[targetIndex];
     }
+
+    private  void testMethod() {
+        System.out.println("just test");
+    }
 }
