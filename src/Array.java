@@ -1,7 +1,8 @@
 import java.util.*;
 
-public class Arrays {
+public class Array{
     Scanner sc = new Scanner(System.in);
+    public static final Array ar = new Array();
 
     public int[] declare(int[] arr){
         for (int i = 0;i < arr.length;i++){
@@ -39,7 +40,7 @@ public class Arrays {
     }
 
     public int outIndex(int[] arr,int targetIndex){
-        System.out.printf(String.format("[INDEX:%d]out:%d",targetIndex,arr[targetIndex]));
+
         if (targetIndex == 0){
             for(int i = targetIndex;i < arr.length - targetIndex - 1;i++) {
                 arr[i] = arr[i + 1];
@@ -56,6 +57,31 @@ public class Arrays {
         }
         arr[arr.length -1] = 0;
         return arr[targetIndex];
+    }
+
+    public int[] duplicate(int[] arr) {
+        int size = arr.length;
+        int[] repude_arr = new int[size];
+        for (int i = 0;i<arr.length;i++){
+            repude_arr[i] = arr[i];
+            arr[i] = 0;
+        }
+
+        System.out.println("------------------");
+        for (int i = 0;i < arr.length;i++){
+            for(int j = 0;j < arr.length;j++){
+                if(repude_arr[i] != arr[j]){
+                    arr[i] = repude_arr[i];
+                }
+                else if (repude_arr[i] == arr[j]){
+                    repude_arr[i] = 0;
+                }
+
+            }
+        }
+
+        return  arr;
+
     }
 
     private  void testMethod() {
