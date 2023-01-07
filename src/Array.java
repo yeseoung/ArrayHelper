@@ -62,12 +62,12 @@ public class Array{
     public int[] duplicate(int[] arr) {
         int size = arr.length;
         int[] repude_arr = new int[size];
+
         for (int i = 0;i<arr.length;i++){
             repude_arr[i] = arr[i];
             arr[i] = 0;
         }
 
-        System.out.println("------------------");
         for (int i = 0;i < arr.length;i++){
             for(int j = 0;j < arr.length;j++){
                 if(repude_arr[i] != arr[j]){
