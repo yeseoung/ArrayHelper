@@ -2,8 +2,7 @@ import java.util.*;
 
 public class Array{
     Scanner sc = new Scanner(System.in);
-    public static final Array ar = new Array();
-
+    public static final Array ar = new Array();//자기자신호출
     public int[] declare(int[] arr){
         for (int i = 0;i < arr.length;i++){
             arr[i] = 0;
@@ -82,6 +81,20 @@ public class Array{
 
         return  arr;
 
+    }
+
+    public int[] pop(int[] arr){
+        arr[-1] = 0;
+        return arr;
+    }
+    public int[] push(int[]arr, int n){
+        int[] pushed_arr = new int[arr.length + 1];
+
+        for(int i = 0; i<arr.length;i++){
+            pushed_arr[i] = arr[i];
+        }
+        pushed_arr[pushed_arr.length-1] = n;
+        return pushed_arr;
     }
 
     private  void testMethod() {
